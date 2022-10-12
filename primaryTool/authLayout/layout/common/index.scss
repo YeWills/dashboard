@@ -1,0 +1,16 @@
+.container {
+  height: 100%;
+  position: relative;
+  background: #fff;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}

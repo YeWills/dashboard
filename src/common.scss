@@ -1,0 +1,216 @@
+:global {
+  .next-btn.next-medium.next-btn-loading:after {
+    display: none !important;
+  }
+}
+.container {
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  overflow: auto;
+  :global {
+    .next-divider {
+      background: #f5f6fa !important ;
+      height: 4px !important;
+    }
+    .next-form-item-control {
+      display: inline-block;
+    }
+  }
+
+  .head {
+    display: inline-block;
+    border-left: 5px solid #e76108;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    color: #333333;
+    margin: 15px 20px 15px 15px;
+  }
+
+  .searchForm {
+    padding: 12px 12px 0;
+    .formItem {
+      width: 350px;
+      text-align: right;
+    }
+    .nextCascaderMenu {
+      :global {
+        .next-menu.next-ver {
+          text-align: left !important;
+        }
+      }
+    }
+    .formItemMax {
+      width: 340px;
+      text-align: right;
+    }
+
+    .selectWidth {
+      width: 225px;
+      text-align: left;
+    }
+    .inputWidth {
+      width: 225px;
+      text-align: left;
+    }
+
+    .inputWidthSmall {
+      width: 80px;
+    }
+
+    .timeWidth {
+      width: 225px;
+    }
+
+    .labelWidth {
+      width: 100px;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .spanWidth {
+      // width: 200px;
+      display: inline-block;
+      // text-align: right;
+      vertical-align: top;
+    }
+
+    .editorWidth {
+      width: 600px;
+      height: auto;
+      // height: 400px;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .btnWrap {
+      text-align: center;
+      // margin-top: 4px;
+      // margin-bottom: 4px;
+      // padding-bottom: 16px;
+    }
+  }
+
+  .divider {
+    height: 4px;
+    background: #f5f6fa;
+  }
+  .tableWrap {
+    padding: 0 12px;
+    box-sizing: border-box;
+    .table {
+      width: 100%;
+      margin: 10px auto;
+    }
+    .btnList {
+      margin-bottom: 16px;
+    }
+  }
+  .page {
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+/* 详情 disabled 样式重置 */
+.resetDisabled {
+  :global {
+    .next-select-trigger .next-input.next-disabled em {
+      color: #333 !important;
+    }
+    .next-input.next-disabled input,
+    .next-input.next-disabled textarea {
+      -webkit-text-fill-color: inherit !important;
+    }
+    .next-input.next-disabled input {
+      color: #333 !important;
+    }
+    .next-input.next-disabled textarea {
+      color: #333 !important;
+    }
+    .next-radio-group.disabled .next-radio-label {
+      color: #333 !important;
+    }
+  }
+}
+.dialog {
+  min-width: 600px;
+  max-width: 1000px;
+  height: 500px;
+  overflow: auto;
+  .selectWidth {
+    width: 180px;
+  }
+  .inputWidth {
+    width: 180px;
+    text-align: left;
+  }
+  .dialogBtn {
+    margin-bottom: 15px;
+  }
+  .page {
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+.btnWrap {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.marginB10 {
+  margin-bottom: 10px;
+}
+.marginB20 {
+  margin-bottom: 20px;
+}
+.marginL20 {
+  margin-left: 20px;
+}
+
+.marginBL20 {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.inputWidthNum {
+  width: 90px;
+}
+
+.blueBtn {
+  cursor: pointer;
+  color: #3c88f9;
+  font-weight: bold;
+}
+
+.redBtn {
+  cursor: pointer;
+  color: #ff3000;
+  font-weight: bold;
+}
+
+.redColor {
+  color: #ff3000;
+}
+
+.marginLeft10 {
+  margin-left: 10px;
+}
+
+.inputWidthSmall {
+  width: 80px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.memberbtn{
+  margin-left: 10px;
+}

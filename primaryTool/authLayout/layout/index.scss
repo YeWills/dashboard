@@ -1,0 +1,201 @@
+@import '../../index.scss';
+.content {
+  width: 100%;
+  .header {
+    min-width: 1300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-fill1-1;
+    box-shadow: 0 1px $color-line1-3;
+    .logo {
+      background-color: $color-brand1-1;
+      text-align: center;
+    }
+    .headerleft,.headerRight{
+      line-height: 60px;
+      vertical-align: middle;
+      display: flex;
+      img{
+        line-height: 60px;
+        vertical-align: middle;
+      }
+    }
+    .fold{
+      width: 20px;
+      height: 20px;
+      margin: 20px 0 0 10px;
+    }
+
+
+    .title {
+      color: $color-text1-3;
+      font-size: 21px;
+      line-height: 60px;
+      padding-left: 10px;
+    }
+    .user {
+      position: relative;
+      .menuBtn {
+        display: inline-block;
+        line-height: 58px;
+        position: relative;
+        .menuButton {
+          font-size: 14px;
+          border: none;
+          background: transparent;
+          color: #333;
+          cursor: pointer;
+        }
+        .menuButton:hover {
+          color: $color-brand1-1;
+        }
+      }
+      .menuItem {
+        overflow: hidden;
+        display: inline-block;
+      }
+      .menuList {
+        display: inline-block;
+        padding: 5px 10px 0;
+        max-height: 396px;
+        line-height: 1;
+        max-width: 420px;
+        overflow-y: auto;
+        font-size: 12px;
+        border-radius: 3px;
+        background: #fff;
+        border: 1px solid #FFFFFF;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translate(-50%, 0);
+        z-index: 9999;
+        .menuItem {
+          p {
+            margin: 0;
+          }
+          .meun_compay_name {
+            line-height: 32px;
+            color: #999;
+            border-bottom: 1px solid #E6E7EB;
+          }
+          .menu_ledger_name {
+            line-height: 32px;
+            color: #999;
+          }
+          ul {
+            color: #333333;
+            width: 378px;
+            overflow: hidden;
+            float: left;
+            li {
+              display: inline-block;
+              line-height: 32px;
+              width: 180px;
+              cursor: pointer;
+            }
+            li:hover {
+              color: $color-brand1-1;
+            }
+          }
+        }
+      }
+      .userPic {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        border-radius: 14px;
+        border-width: 0.5px;
+        border-color: $color-line1-3;
+      }
+      .userName {
+        margin-left: 70px;
+        font-size: 14px;
+        color: $color-text1-5;
+      }
+    }
+    
+    .logout {
+      margin: 0 20px 0 10px;
+      font-size: 14px!important;
+    }
+  }
+  .body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    .slider {
+      height: 100%;
+      overflow: auto;
+      background-color: $color-other-1;
+      .arrowsIcon{
+        padding-right: 10px;
+        text-align: right;
+      }
+      .next-nav-icon {
+        margin-right: 4px;
+      }
+      .next-icon {
+        margin-right: 4px;
+      }
+    }
+  }
+  .contain {
+    flex: auto;
+    height: 100%;
+    overflow: hidden;
+  }
+  .main {
+    background-color: $color-white;
+    padding: 0;
+    flex: 1;
+    margin-top: 1px;
+    height: calc(100%);
+    display: block;
+    overflow: hidden;
+    .tab {
+      background-color: $color-white;
+      padding: 0;
+      margin: 0;
+      flex: auto;
+      display: block;
+      overflow: hidden;
+    }
+    .scrollContent {
+      padding: 0;
+      height: calc(100% - 38px);
+      overflow: auto;
+    }
+  }
+  
+  
+  
+}
+:global{  
+  .tagGroup {
+    background-color: #F5F6FA;
+    margin: 0;
+    .next-tabs-tab-inner {
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+      a {
+        color: #333;
+        line-height: 36px;
+        height: 36px;
+      }
+    }
+  }
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}

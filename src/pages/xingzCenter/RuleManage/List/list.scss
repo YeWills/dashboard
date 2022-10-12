@@ -1,0 +1,62 @@
+@import '@src/index.scss';
+$margin-left-leng: 10px;
+
+.swap {
+    width: 192px;
+  }
+.container {
+    .form{
+        margin: 20px;
+        :global{
+            .next-cascader-inner{
+                // width: 360px!important;
+                .next-cascader-menu-wrapper{
+                    width: 120px;
+                }
+            }
+        }
+    }
+    .btns{
+        margin-left: $margin-left-leng;
+        .actionBtn{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .body{
+        margin-left: $margin-left-leng;
+    }
+
+    
+}
+
+.displayNone{
+    display: none;
+}
+.dialog{
+    width: 600px;
+    .fieldItem{
+        width: 90%; 
+    }
+}
+
+.firstRow{
+    padding: 0 20px;
+}
+
+.queryForm {
+    margin: 20px;
+    margin-bottom: 0;
+  
+    .fieldItem {
+      width: 100%;
+    }
+  
+    .btnWrap {
+      display: flex;
+      justify-content: center;
+    }
+    .xdselect{
+        width: 100%;
+    }
+  }

@@ -1,0 +1,47 @@
+.formWrap{
+    .content{
+        .item{
+            width: 100%;
+        }
+        :global{
+            .enform-btn{
+              display: flex;
+              justify-content: center;
+              .next-btn-primary{
+                margin-right: 20px!important;
+              }
+            }
+          }
+          .showItem{ }
+          .hiddenItem{
+            display: none;
+          }
+    }
+  
+    .unLableFormItem{
+        width: 100%;
+        padding-left: 30px;
+    }
+    .unLableFirstItem{
+      padding-left:0;
+    }
+    .unLableBtn{
+      margin: 0;
+    }
+    .hidden{
+        opacity: 0;
+        display: inline-block;
+        height: 1px;
+        width: 1px;
+    }
+ 
+    .unLableBtnsItem{
+      display: flex;
+      :global{
+        .next-form-item:last-child() {
+          padding-left: 0;
+          width: auto;
+        }
+      }
+    }
+}

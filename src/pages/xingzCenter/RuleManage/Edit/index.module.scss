@@ -1,0 +1,67 @@
+.contract_rule_manage_main{
+  :global{
+    .next-card{
+      width: 582px;
+      border: 1px solid #DCDEE3;
+      border-radius: 3px;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .next-upload-list-text .next-upload-list-item .next-icon-close{
+      line-height: 28px;
+    }
+    .next-form-item-label{
+      padding-right: 0;
+    }
+    .next-card-content-container{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .next-card-header{
+      padding: 0 20px;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    .next-date-picker2-input{
+      height: 30px;
+      border-color: #dcdee2;
+      border-radius: 0;
+      .next-input{
+        height: 28px;
+      }
+      input{
+        height: 28px;
+      }
+    }
+  }
+  width: 100%;
+  .steps{
+    padding: 40px 0;
+  }
+  .step_main{
+    padding: 0 40px;
+  }
+  .btn_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0;
+  }
+  .card_wrap{
+    padding: 20px;
+    border: 1px solid #DCDEE3;
+    .card_btn_wrap{
+      .card_move_btn{
+        color: #2A83FF;
+        margin-right: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import '@src/index.scss';
+
+.container {
+  display: flex;
+  padding: 10px;
+
+  .header {
+    width: 100%;
+    padding: 10px;
+    background: $color-white;
+
+    .title {
+      display: inline-block;
+      width: 60px;
+      margin-right: 1px;
+      color: #333;
+      font-size: 12px;
+    }
+
+    .lg {
+      width: 72px;
+    }
+
+    .swap {
+      width: 192px;
+    }
+
+    .header_footer {
+      text-align: center;
+
+      .button {
+        margin-right: 32px;
+      }
+    }
+  }
+
+  .body {
+    max-width: 100%;
+    margin-top: 5px;
+    background: $color-white;
+
+    .table {
+      width: 100%;
+    }
+  }
+
+  .pagination {
+    margin-top: 10px;
+    text-align: right;
+  }
+
+  .text_center {
+    text-align: center;
+  }
+
+  .page_box {
+    margin-top: 10px;
+  }
+}

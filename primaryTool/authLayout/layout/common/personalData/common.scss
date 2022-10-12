@@ -1,0 +1,36 @@
+
+.container {
+  .header {
+    padding: 12px 12px 0;
+    .button_group {
+      margin-top: 4px;
+      text-align: center;
+      padding-bottom: 16px;
+    }
+    .form_item {
+      margin-right: 60px !important;
+    }
+  }
+  .line {
+    height: 4px;
+    background: #F5F6FA;
+  }
+  .body {
+    padding: 20px 12px;
+    .btn_group {
+      padding-bottom: 16px;
+      button {
+        margin-right: 12px !important;
+      }
+    }
+  }
+  .table_btn_group {
+    button {
+      margin: 0 5px;
+    }
+  }
+  .pagination {
+    text-align: center;
+    margin-top: 16px;
+  }
+}
