@@ -11,17 +11,6 @@ import md5 from 'md5';
 const w = window;
 const d = document;
 
-// $SDK_signature 用于 验签失败(json.code == -9580106) 时，用于重新请求的时候加签用；
-// $SDK_session 用于 验签失败(json.code == -9580106) 时，存储 session-id cookie，以便重新请求时使用；
-// $SDK_acu_session 用于 验签失败(json.code == -9580106) 时，存储 ac-session-id cookie，以便重新请求时使用；
-
-// 关于$SDK_signature的说明
-// $SDK_signature 此为密钥，也是后端所说的secret，此参数非常重要，若无，则验证不通过，报错(json.code == -9580106)。
-// 获取的方式是项目页面第一次打开时，任意发起一个请求，第一次请求肯定不会成功，但后端会在接口出参中返回给前端 这个 secret，
-// sdk将这个secret 保存到 document.cookie 的 $SDK_signature 键值对中 以便以后的请求使用，
-// 然后sdk再次发起请求，这次用上次的cookie 的 $SDK_signature ，就请求成功了，
-// 接着以后所有的请求，因为有了$SDK_signature  只需发送一次就成功。
-
 const SDK = (superParams = {}) => {
   const { appkey } = superParams;
   const _appkey = appkey || '';
@@ -78,25 +67,7 @@ const SDK = (superParams = {}) => {
     setCode(json, xml) {
       if (typeof json === 'string' && json.indexOf('{') > -1 && json.indexOf(':') > -1 && json.indexOf('}') > -1)
         json = eval(`(${json})`);
-      if (json.code === -9580106) {
-        console.log('验签失败，重新验签9580106');
-        // 验签失败，重新验签
-        // 重新设置新的secret,session-id,u-session-id,ac-session-id
-        this.setCookie('$SDK_signature', json.info.secret, 8); // 秘钥
-        this.setCookie('$SDK_session', json.ext['session-id'], 8); // 网关生成的
-        if (json.ext['ac-session-id']) {
-          // ac-session-id 用户登录
-          this.setCookie('$SDK_acu_session', json.ext['ac-session-id']);
-        }
-        // 重新验签计数，大于4次则停止重新验签
-        this._requestRepeatNum++;
-        if (this._requestRepeatNum > 5) {
-          console.error('请求签名设置异常！');
-          this._requestRepeatNum = 0;
-        } else {
-          this.request(this._option);
-        }
-      } else if (json.code === 0) {
+      if (json.code === 0) {
         delete json.ext;
         this._callback(json, xml);
       } else {
@@ -164,25 +135,7 @@ const SDK = (superParams = {}) => {
 
       this._option = opt;
 
-      // ！！！ 需要十分注意的是 ajaxParams 的属性赋值 必须严格属性名升序的方式顺序： ac-session-id appkey data session-id ....
-      // ！！！ 打乱顺序，会导致 this.md5Encrypt(ajaxParams) 生成不同值，这样就会与后端固定顺序生成的 md5 码 不一致，校验失败
-      // 参考 《网关-使用篇》
-      ajaxParams['ac-session-id'] = this.getCookie('ac-session-id') || this.getCookie('$SDK_acu_session');
-      ajaxParams.appkey = this._appkey;
-      // 固定写法
-      ajaxParams.sys = '3001';
       ajaxParams.data = JSON.stringify(params);
-      ajaxParams['session-id'] = this.getCookie('$SDK_session') || this.getCookie('session-id');
-      ajaxParams.timestamp = new Date().getTime();
-      ajaxParams.userAgent = navigator.userAgent.trim();
-      // version 指的是 网关协议 版本号
-      ajaxParams.version = '632.011';
-
-      // 防止session-id过期或串改 如何sessionid 不是 S_开头，说明是被串改，此时删除  session id，让请求不成功(阻止)
-      ajaxParams['session-id'].indexOf('S_') === -1 ? [delete ajaxParams['session-id']] : '';
-
-      // 进行sign签名
-      ajaxParams.sign = this.md5Encrypt(ajaxParams);
       ajaxParams.mdk = 'pro';
       delete ajaxParams.userAgent;
 
@@ -200,17 +153,15 @@ const SDK = (superParams = {}) => {
     md5Encrypt(arg) {
       let param = '';
       for (const i in arg) {
-        let key = i;
+        const key = i;
         const val = arg[key];
-        if (key === 'userAgent') key = 'user-agent';
         val && [(param += key + val)];
       }
-      return md5(this.getCookie('$SDK_signature') + param).toUpperCase();
+      return md5(this.getCookie('$SDK_signature') + param);
     }
   }
 
   // 对外统一暴露$SDK方法
-  // 疑问 为什么要 继承 $_SDK_Main 没有任何作用
   class $_SDK extends $_SDK_Main {
     constructor() {
       super();

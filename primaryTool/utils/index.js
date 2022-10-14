@@ -116,40 +116,8 @@ const request = (option) => {
         } else {
           goLogin();
         }
-      } else if (e.code === -3304006) {
-        console.log(`${option.url}--${e.msg}`);
-        if (queryString('noWindow') === 'noWindow' && window.parent) {
-          postMessage(e);
-          window.location.href = `/${systemName}/noauthority?noWindow=noWindow`;
-        } else {
-          window.location.href = `/${systemName}/noauthority`;
-        }
-      } else if ([-3304007, -13304007].includes(e.code)) {
-        // 没有系统权限
-        if (queryString('noWindow') === 'noWindow' && window.parent) {
-          postMessage(e);
-          window.location.href = `/${window.conf.systemName}/noauthority?errorCode=${e.code}&noWindow=noWindow`;
-        } else {
-          window.location.href = `/${window.conf.systemName}/noauthority?errorCode=${e.code}`;
-        }
-      } else if (e.code === -3304109) {
-        // 校验ticket
-        resolve({ code: -3304109 });
-      } else if (e.code === -3304108) {
+      } else if (e.code === -111111) {
         logout();
-      } else if (e.code === -13305002 || e.code === -13304705) {
-        // -13305002, "系统需要钉钉扫码登录进行访问"
-        // -13304705, "系统需要启动360卫士进行访问"
-        Message.show({ type: 'warning', content: e.msg });
-        setTimeout(() => {
-          logout();
-        }, 3000);
-      } else if (e.code === -13305003) {
-        // -13305003, "帐号已在其他地方登录，当前系统被迫下线"
-        Message.show({ type: 'warning', content: e.msg });
-        setTimeout(() => {
-          goLogin();
-        }, 3000);
       } else if (!option.closeErrorMsgShow) {
         Message.show({
           type: 'error',
