@@ -30,10 +30,10 @@ const createApp = function () {
     app.model(key.default);
   });
 
-  setLoginUrl(() => {
-    app.router(router);
-    app.start('#root');
-  });
+  // setLoginUrl(() => {
+  app.router(router);
+  app.start('#root');
+  // });
 };
 if (location.search.includes('from=fws')) {
   window.IFRAME_FWS = true;
