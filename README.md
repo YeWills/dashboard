@@ -48,6 +48,12 @@ Add source map 的路径就是：
 本节主要讲解了Webpack里source map是什么以及如何通过devtool配置其生成方式。在开发环境我们选择eval-cheap-module-source-map；生产环境我们一般不生成source map，如果一定需要的话，可以选择hidden-source-map或白名单策略。
 
 
+### 使用谷歌add source map
+将一个本地map文件，可以是项目中单个map文件，领出来使用http-server启动，将文件存放到本地服务器内，
+谷歌add source map时，使用本地服务器地址下的map文件地址，如 `http://127.0.0.1:8080/1638d101b76cb1477f1a.async.js.map`
 
 
+## 关于nginx部署
+react browserHistory 的配置demo， nginx配置放在根目录下的 nginx.conf 中，本例可完美解释，直接通过http-server启动dist目录，带path的路由下，会报错。
+经过配置后的nginx就不会报错。
 
