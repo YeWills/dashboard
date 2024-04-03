@@ -16,7 +16,7 @@ const getDefautFormValue = () => {
 class pageList extends React.Component {
   constructor(props) {
     super(props);
-    this.keyId = 'kzSkuCode';
+    this.keyId = 'code';
     this.state = {
       queryparams: { ...getDefautFormValue() },
       loading: false,

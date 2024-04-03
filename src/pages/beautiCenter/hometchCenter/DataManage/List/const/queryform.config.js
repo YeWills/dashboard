@@ -3,12 +3,16 @@ export default {
   type: 'query',
   fields: [
     {
-      label: '名称',
-      name: 'skuName',
+      label: '教育编号',
+      name: 'code',
     },
     {
-      label: '号码',
-      name: 'code',
+      label: '老师',
+      name: 'name',
+    },
+    {
+      label: '类别',
+      name: 'type',
     },
   ],
   btns: [

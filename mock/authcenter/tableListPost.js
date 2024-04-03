@@ -17,25 +17,25 @@ const data = {
     pageSize: 10,
     resultList: [
       {
-        level3CategoryName: '道可道',
-        brandName: '道可道',
-        level3CategoryId: 20166,
-        updateTime: '2019-12-25 20:01:37',
-        supplierCode: '道可道',
-        bizMark: 12,
-        kzSkuCode: '1245',
-        skuName: 'ada2z',
+        code: '1001',
+        name: '黄小明',
+        type: '语文',
+        mark: '幽默',
       },
-
       {
-        level3CategoryName: '非常道',
-        brandName: '非常道',
-        level3CategoryId: 20111,
-        supplierCode: '非常道',
-        kzSkuCode: '72898ddd1',
-        skuName: '非常道',
+        code: '1002',
+        name: '李大海',
+        type: '数学',
+        mark: '风趣',
       },
-    ],
+      {
+        code: '1003',
+        name: '雷小军',
+        type: '计算机',
+        mark: '伟人',
+      },
+    ]
+
   },
   msg: '成功',
   statusText: '成功',

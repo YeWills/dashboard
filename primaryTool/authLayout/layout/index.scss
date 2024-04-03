@@ -114,12 +114,28 @@
         margin-left: 70px;
         font-size: 14px;
         color: $color-text1-5;
+        line-height: 24px;
+        display: inline-block;
+        height: 24px;
+
+        :global{  
+          .next-btn-helper{
+            line-height: 24px;
+            /* display: inline-block; */
+            height: 24px;
+            margin-top: -4px;
+            margin-left: 4px;
+            font-size: 14px;
+          }
+        }
       }
     }
     
     .logout {
       margin: 0 20px 0 10px;
       font-size: 14px!important;
+      margin-top: -5px;
+      margin-left: 6px;
     }
   }
   .body {
@@ -186,6 +202,13 @@
         height: 36px;
       }
     }
+  }
+  .persionBtn{
+    line-height: 24px;
+    /* display: inline-block; */
+    height: 24px;
+    margin-top: -4px;
+    margin-left: 4px;
   }
 }
 
