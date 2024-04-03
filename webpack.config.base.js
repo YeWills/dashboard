@@ -71,7 +71,8 @@ module.exports = {
     fs: 'empty',
     module: 'empty',
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
+  devtool: 'hidden-source-map',
   optimization: {
     splitChunks: {
       cacheGroups: {

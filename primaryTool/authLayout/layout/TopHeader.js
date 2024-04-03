@@ -44,19 +44,19 @@ const TopHeader = ({ menuSize, setMenuSize, history }) => {
             <img src={Rightindent} className={styles.fold} alt="" onClick={() => setMenuSize('large')} />
           )}
 
-          <span className={styles.title}>满汉全席</span>
+          <span className={styles.title}>管理中台</span>
         </div>
         <div className={styles.headerRight}>
           <div className={styles.user}>
-            <img src={userImgUrl} alt={userImgUrl} className={styles.userPic} />
+            {/* <img src={userImgUrl} alt={userImgUrl} className={styles.userPic} /> */}
             <div className={styles.menuBtn}>
-              <span className={styles.menuButton}>小龙虾</span>
+              {/* <span className={styles.menuButton}>小龙虾</span> */}
             </div>
             <span className={styles.userName}>
               你好,
               <Dropdown
                 trigger={
-                  <Button type="primary" text>
+                  <Button type="primary" className={styles.persionBtn} text>
                     尉迟恭
                   </Button>
                 }
